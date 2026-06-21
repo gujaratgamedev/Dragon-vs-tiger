@@ -22,6 +22,16 @@
 <body>
 
 <h1>🐉 Dragon vs 🐯 Tiger</h1>
+<h2>Score: <span id="score">0</span></h2>
+<button onclick="play('Dragon')">Dragon</button>
+<button onclick="play('Tiger')">Tiger</button>
+
+<div id="result"></div>
+
+
+<h1>🐉 Dragon vs 🐯 Tiger</h1>
+
+<h2>Score: <span id="score">0</span></h2>
 
 <button onclick="play('Dragon')">Dragon</button>
 <button onclick="play('Tiger')">Tiger</button>
@@ -29,18 +39,25 @@
 <div id="result"></div>
 
 <script>
+let score = 0;
+
 function play(choice) {
   let result = Math.random() < 0.5 ? "Dragon" : "Tiger";
 
   if (choice === result) {
+    score++;
     document.getElementById("result").innerHTML =
       "🎉 You Win! Result: " + result;
   } else {
     document.getElementById("result").innerHTML =
       "😢 You Lose! Result: " + result;
   }
+
+  document.getElementById("score").innerText = score;
 }
 </script>
 
+</body>
+</html>
 </body>
 </html>
